@@ -79,6 +79,7 @@ jobs:
           terraform apply -auto-approve tfplan
 
   destroy:
+    if: inputs.action == 'destroy'
     runs-on: ubuntu-latest
     environment: destroy-approval
     steps:

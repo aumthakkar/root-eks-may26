@@ -8,6 +8,12 @@ module "eks_cluster_may26" {
   public_subnets_count  = 2
   private_subnets_count = 2
 
+  auto_create_public_subnets = true
+  auto_create_private_subnets = true
+
+  manual_public_cidr_block      = ["10.100.30.0/24", "10.100.32.0/24"]
+  manual_private_cidr_block     = ["10.100.33.0/24", "10.100.35.0/24"]
+
   eks_version                 = "1.33"
   eks_endpoint_private_access = true
   eks_endpoint_public_access  = true
